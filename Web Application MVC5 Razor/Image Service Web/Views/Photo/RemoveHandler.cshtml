@@ -1,0 +1,73 @@
+﻿@model ImageServiceWeb.Models.ConfigModel
+@{
+    ViewBag.Title = "RemoveHandler";
+}
+
+<h2>RemoveHandler</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    styling
+-->
+
+<head>
+    <style>
+        h2 {
+            text-decoration: underline;
+            font-size: 30px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button2 { /* Blue */
+            background-color: #008CBA;
+        }
+
+        .button3 { /* Red */
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<p>Are you sure you want to close this handlers?</p>
+<br />
+<input type="button" id="btnOk" class="button button3" value="Ok">
+<input type="button" id="btnCancel" class="button button2" value="Cancel" onclick='window.location="Config";' />
+<!--
+    script function
+-->
+
+<script>
+    $("#btnOk").click(function () {
+        $.post("@Url.Action("deleteAfterOk")", function () {
+            document.getElementById("btnCancel").disabled = true;
+            document.getElementById("btnOk").disabled = true;
+            window.location.href = "/Photo/Config";
+        });
+    });
+</script>
+<!--
+    on click
+-->
+
+<script type="text/javascript">
+    document.getElementById("btnCancel").onclick = function () {
+        document.getElementById("btnCancel").disabled = true;
+        document.getElementById("btnOk").disabled = true;
+        location.href = "/Photo/Config";
+    };
+</script>

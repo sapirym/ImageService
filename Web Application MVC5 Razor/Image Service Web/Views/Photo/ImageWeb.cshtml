@@ -1,0 +1,73 @@
+﻿@model ImageServiceWeb.Models.ImageWebModel
+
+@{
+    ViewBag.Title = "ImageWeb";
+}
+
+@*<h2>ImageWeb</h2>*@
+
+<div class="jumbotron text-center">
+    <h1>ImageWeb Home Page</h1>
+    <p>Welcome to sapir and hadas first website!</p>
+</div>
+
+<!--
+    display daya types and data itself
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>@Html.DisplayNameFor(model => model.Status)</h2>
+            <h3>    <dt>@Html.DisplayFor(model => model.Status)</dt></h3>
+        </div>
+        <div class="col-sm-4">
+            <h2>@Html.DisplayNameFor(model => model.NumOfPics)</h2>
+            <h3>    <dt>@Html.DisplayFor(model => model.NumOfPics)</dt></h3>
+
+        </div>
+        <div class="col-sm-4">
+            <h2>Student Details:</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Students[0].FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Students[0].LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Students[0].ID)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Students)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h2 {
+            text-decoration: underline;
+            font-size: 30px;
+        }
+    </style>
+</head>
+

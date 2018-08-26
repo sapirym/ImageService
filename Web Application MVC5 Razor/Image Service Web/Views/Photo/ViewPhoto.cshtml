@@ -1,0 +1,76 @@
+﻿@model ImageServiceWeb.Models.PhotoWeb
+
+@{
+    ViewBag.Title = "ViewPhoto";
+}
+
+<h2>ViewPhoto</h2>
+<!DOCTYPE html>
+<!--
+    styling
+-->
+
+<html lang="en">
+<head>
+    <style>
+        h2{
+            text-decoration: underline;
+  font-size: 30px;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button2 { /* Blue */
+            background-color: #008CBA;
+        }
+
+        .button3 { /* Red */
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<br />
+<!--
+    display daya types
+-->
+
+<div>
+    <div class="row">
+            <div class="col-sm-8 col-md-5">
+                <div class="thumbnail">
+
+                    <img src="@Url.Content(Model.PhotoToShow)" alt="not work..">
+                    <div class="caption">
+                        <p>Photo name: @Html.DisplayFor(model => model.PhotoName)</p>
+                        <p>Data of month: @Html.DisplayFor(model => model.PhotoDate)</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<input type="button"  id="btnDelete" class="button button3" value="delete" onclick="location.href='@Url.Action("DeletePhoto", "Photo", new {photo = Model.PhotoName.ToString() })'"/>
+<input type="button"   id="btnCancel" class="button button2" value="return" onclick='window.location="Photos";' />
+<!--
+    javascript
+-->
+
+<script>
+    $("#btnDelete").click(function () {
+        $.post("@Url.Action("deleteAfterOkPics")", function () {
+            window.location.href = "/Photo/Photos";
+        });
+    });
+</script>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ImageServiceWeb.Models.LogWeb>
+
+@{
+    ViewBag.Title = "Logs";
+}
+
+<h2>Logs</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h2 {
+            text-decoration: underline;
+            font-size: 30px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button2 { /* Blue */
+            background-color: #008CBA;
+        }
+
+        .button3 { /* Red */
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<div>
+    <h4>Search  by  Type:</h4>
+    <input type="text" id="myInput" placeholder="Search for type.." title="Type in a name">
+    <a href="#" class="btn btn-default btn-lg" onclick="myFunction()">
+        <span class="glyphicon glyphicon-search"></span> Search
+    </a>
+    <div>
+        <br />
+        <button type="button" onclick='window.location = "ImageWeb";' class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-home"></span> Home
+        </button>
+                
+
+     @*   @Html.ActionLink("Back to home", "ImageWeb")*@
+    </div>
+</div>
+<!--
+    display daya types
+-->
+
+<table class="table table-striped" id="myTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Msg)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Msg)
+            </td>
+        </tr>
+    }
+</table>
+
+
+<!--
+    script for display
+-->
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>

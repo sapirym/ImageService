@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ImageServiceWeb.Models.PhotoWeb>
+
+@{
+    ViewBag.Title = "Photos";
+}
+
+<h2>Photos</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    styling
+-->
+
+<head>
+   <style>
+        h2{
+            text-decoration: underline;
+  font-size: 30px;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button2 {/* Blue */
+            background-color: #008CBA;
+        }
+        .button3 {/* Red */
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<!--
+    display daya types
+-->
+
+<body>
+    <div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+               
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        
+                        <img src="@Url.Content(item.ThumbPhoto)" class="img-circle" alt="not work.." width="242" height="200">
+                        <div class="caption">
+    <p>Photo name: @Html.DisplayFor(modelItem => item.PhotoName)</p>
+    <p>Data of month: @Html.DisplayFor(modelItem => item.PhotoDate)</p>
+
+    <p>
+        <a href="#" id="removeBtn" class="button button3" role="button" onclick="location.href='@Url.Action("ViewPhoto", "Photo", new {photo = item.PhotoName.ToString() })'">
+            view
+            <span class="glyphicon glyphicon-fullscreen"></span>
+    </a>
+                <a href="#" class="button button2" role="button" onclick="location.href='@Url.Action("DeletePhoto", "Photo", new {photo = item.PhotoName.ToString() })'">delete
+                    <span class="glyphicon glyphicon-remove-circle"></span></a>
+                            </p>
+                            </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+<br />
+<div>
+    <br />
+    <button type="button" onclick='window.location = "ImageWeb";' class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-home"></span> Home
+    </button>
+
+
+    @*   @Html.ActionLink("Back to home", "ImageWeb")*@
+</div>

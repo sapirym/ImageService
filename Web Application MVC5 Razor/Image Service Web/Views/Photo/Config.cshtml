@@ -1,0 +1,56 @@
+﻿@model ImageServiceWeb.Models.ConfigModel
+
+@{
+    ViewBag.Title = "Config";
+}
+
+<head>
+    <style>
+        h2 {
+            text-decoration: underline;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<h2>Config</h2>
+
+
+<!---
+    display the data types
+    -->
+<table class="table">
+    <tr>
+        <p>@Html.DisplayNameFor(model => model.SourceName) @Html.DisplayFor(model => model.SourceName)</p>
+        <p>@Html.DisplayNameFor(model => model.OutputDir) @Html.DisplayFor(model => model.OutputDir)</p>
+        <p>@Html.DisplayNameFor(model => model.ThumbnailSize) @Html.DisplayFor(model => model.ThumbnailSize)</p>
+        <p>@Html.DisplayNameFor(model => model.LogName) @Html.DisplayFor(model => model.LogName)</p>
+        <tr><p type="text" id="prodHandlers" size="5"></p></tr>
+    </tr>
+</table>
+
+<!---
+    display the data itself
+    -->
+<div>
+    <th>@Html.DisplayNameFor(model => model.Handlers)</th>
+        @foreach (var item in Model.Handlers)
+        {
+            if (!String.IsNullOrEmpty(item.ToString()))
+            {
+            <td>
+                <button> @Html.ActionLink(item, "RemoveHandler", new { path = item.ToString() }, null) </button>
+            </td>
+            }
+        }
+    </div>
+<br />
+<div>
+    <br />
+    <button type="button" onclick='window.location = "ImageWeb";' class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-home"></span> Home
+    </button>
+
+
+    @*   @Html.ActionLink("Back to home", "ImageWeb")*@
+</div>
