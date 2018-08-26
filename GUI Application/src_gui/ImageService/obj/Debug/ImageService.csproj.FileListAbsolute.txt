@@ -1,0 +1,11 @@
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\bin\Debug\ImageService.exe.config
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.ImageService.resources
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.ProjectInstaller.resources
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.csproj.GenerateResource.Cache
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\bin\Debug\ImageService.exe
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\bin\Debug\ImageService.pdb
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.exe
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.pdb
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lenovo\Source\Repos\ImageService\ImageService\obj\Debug\ImageService.csprojResolveAssemblyReference.cache
