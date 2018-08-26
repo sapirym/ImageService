@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="button5">Start Service</string>
+
+    <string name="button6">Stop Service</string>
+
+  <!--  <string name="textView">our first app!!(:</string>-->
+
+</resources>
