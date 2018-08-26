@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+  </startup>
+  <appSettings>
+    <add key="ID" value="316590215;316251818"/>
+    <add key="FirstName" value="hadas;sapir"/>
+    <add key="LastName" value="berger;yamin"/>
+  </appSettings>
+</configuration>
