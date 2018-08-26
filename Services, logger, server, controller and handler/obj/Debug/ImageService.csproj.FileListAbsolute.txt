@@ -1,0 +1,9 @@
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\bin\Debug\ImageService.exe.config
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\bin\Debug\ImageService.exe
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\bin\Debug\ImageService.pdb
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.csprojResolveAssemblyReference.cache
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.ImageService.resources
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.ProjectInstaller.resources
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.csproj.GenerateResource.Cache
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.exe
+c:\users\hadas\documents\visual studio 2015\Projects\ImageService\ImageService\obj\Debug\ImageService.pdb
